@@ -26,6 +26,29 @@ namespace PersonAndSkills.Controllers
             return repository.GetAll();
         }
 
-    
+        [HttpGet("GetPersonById")]
+        public Person Get(long personId)
+        {
+            return repository.GetPersonById(personId);
+
+        }
+        [HttpPost("AddPerson")]
+        public Person AddPerson(Person person)
+        {
+            return repository.AddPerson(person);
+
+        }
+        [HttpPut("UpdatePerson")]
+        public void Update(Person person)
+        {
+            repository.Update(person);
+
+        }
+        [HttpDelete("Delete")]
+        public void Delete(long personId)
+        {
+            repository.DeletePerson(personId);
+
+        }
     }
 }

@@ -1,13 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using PersonAndSkills.Model;
 
 namespace PersonAndSkills.Repositories
 {
-    interface IRepository
+    public interface IRepository
     {
+        Person AddPerson(Person person);
+        Person GetPersonById(long personId);
         IEnumerable<Person> GetAll();
+        void Update(Person person);
+        void DeletePerson(long personId);
     }
 }
