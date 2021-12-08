@@ -1,8 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+//using System.Web.Http.ModelBinding;
 using Microsoft.EntityFrameworkCore;
 using PersonAndSkills.Contexts;
 using PersonAndSkills.Model;
+using Microsoft.AspNetCore.Mvc;
+using System.Web.Mvc;
 
 namespace PersonAndSkills.Repositories
 {
@@ -42,12 +45,14 @@ namespace PersonAndSkills.Repositories
         /// </summary>
         /// <param name="newPerson"></param>
         /// <returns></returns>
+
         public Person AddPerson(Person newPerson)
         {
             context.Persons.Add(newPerson);
             context.SaveChanges();
             return newPerson;
         }
+
         /// <summary>
         /// обновить сущкествующую запись
         /// </summary>

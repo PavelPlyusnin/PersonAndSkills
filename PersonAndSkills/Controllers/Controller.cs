@@ -35,14 +35,22 @@ namespace PersonAndSkills.Controllers
         [HttpPost("AddPerson")]
         public Person AddPerson(Person person)
         {
-            return repository.AddPerson(person);
-
+            if (ModelState.IsValid)
+            {
+                return repository.AddPerson(person);
+            }
+            else
+            {
+                return null;
+            }
         }
         [HttpPut("UpdatePerson")]
         public void Update(Person person)
         {
-            repository.Update(person);
-
+            if (ModelState.IsValid)
+            {
+                repository.Update(person);
+            }
         }
         [HttpDelete("Delete")]
         public void Delete(long personId)
